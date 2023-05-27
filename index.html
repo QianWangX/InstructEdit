@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title> InstructEdit: Improving Automatic Masks for Diffusion-based Image Editing With User Instructions </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="box_swipe.css">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script src="box_swipe.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Segoe+UI" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="n-header">
+    </div>
+    <div class="n-title">
+        <h1> InstructEdit: Improving Automatic Masks for Diffusion-based Image Editing With User Instructions</h1>
+        <h2 id="abstract" class="center">  </h2>
+    </div>
+
+    <!-- SECTION: AUTHORS -->
+    <div class="n-byline">
+        <div class="byline">
+            <ul class="authors">
+                <li> Qian Wang
+                </li>
+                <li> Biao Zhang
+                </li>
+                <li> Michael Birsak
+                </li>
+                <li> Peter Wonka
+                </li>
+            </ul>
+
+            <div class="authors-affiliations-gap"></div>
+            <ul class="authors affiliations">
+                <li>
+                    KAUST
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="l-article video">
+        <img src="figures/teaser.png" width="80%" class="center"/>
+        <div class="videocaption">
+            <div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SECTION: MAIN BODY -->
+    <div class="n-article">
+        <!-- teaser -->
+        <!-- abstract -->
+        <h2 id="abstract"> Abstract </h2>
+        <p> Recent works have explored text-guided image editing using diffusion models and generated edited images based on text prompts. However, the models struggle to accurately locate the regions to be edited and faithfully perform precise edits.
+            In this work, we propose a framework termed <b>InstructEdit</b> that can do fine-grained editing based on user instructions.
+            Our proposed framework has three components: language processor, segmenter, and image editor.
+            The first component, the language processor, processes the user instruction using a large language model. 
+            The goal of this processing is to parse the user instruction and output prompts for the segmenter and captions for the image editor. 
+            We adopt ChatGPT and optionally BLIP2 for this step.
+            The second component, the segmenter, uses the segmentation prompt provided by the language processor. 
+            We employ a state-of-the-art segmentation framework Grounded Segment Anything to automatically generate a high-quality mask based on the segmentation prompt. 
+            The third component, the image editor, uses the captions from the language processor and the masks from the segmenter to compute the edited image. 
+            We adopt Stable Diffusion and the mask-guided generation from DiffEdit for this purpose.
+            Experiments show that our method outperforms previous editing methods in fine-grained editing applications where the input image contains a complex object or multiple objects. 
+            We improve the mask quality over DiffEdit and thus improve the quality of edited images. We also show that our framework can accept multiple forms of user instructions as input.  </p>
+        <!-- paper links -->
+        <h2 id="Pipeline"> Pipeline </h2>
+        <div class="l-article video">
+            <img src="figures/pipeline.png" width="100%" />
+            <div class="videocaption">
+                <div>
+                </div>
+            </div>
+        </div>
+        <p> Pipeline: given a user instruction, a language processor first parses the instruction into a <span style="color:#800080";>segmentation prompt</span>,
+        an <span style="color:#00A9A9";>input caption</span>, and an <span style="color:#FFA9A9";>edited caption</span>. 
+            A segmenter then generates a mask based on the segmentation prompt. 
+            The mask along with the input and edited captions are then going to an image editor to produce the final output.
+        </p>
+
+        <h2 id="videos"> Results </h2>
+        <p>
+        <h3>Baselines comparison</h3>
+        </p>
+        <div class="l-article video">
+            <img src="figures/baselines.png" width="100%" />
+            <div class="videocaption">
+                <div>
+                </div>
+            </div>
+        </div>
+        <div class="l-article video">
+            <img src="figures/baselines_1.png" width="100%" />
+            <div class="videocaption">
+                <div>
+                </div>
+            </div>
+        </div>
+        <p> Comparison of <b> InstructEdit </b> against the baselines method. 
+            More results can be found in the paper and supplementary materials.</p>
+
+        <p>
+            <h3>Mask improvement</h3>
+            </p>
+        <div class="l-article video">
+            <img src="figures/mask.png" width="100%" />
+            <div class="videocaption">
+                <div>
+                </div>
+            </div>
+        </div>
+        <p> We show that we improve the quality of the edited image by improving the mask quality against DiffEdit. </p>
+
+
+        <h2 id="Source of images"> Source of images </h2>
+        <p> All the input images tested in the paper are real world from <a
+            href="https://unsplash.com/" target="_blank">Unsplash</a>, <a
+            href="https://www.flickr.com/" target="_blank">Flickr</a> or <a
+            href="https://cocodataset.org/#home" target="_blank">COCO dataset.</a> </p>
+
+    </div>
+    <div class="n-footer">
+    </div>
+</body>
+
+</html>
