@@ -1,4 +1,4 @@
-# InstructEdit Anonymous Implementation
+# InstructEdit Implementation
 
 This is the implementation of **InstructEdit: Improving Automatic Masks for Diffusion-based Image Editing With User Instructions**.<br> 
 This code base is modified based on the repo [Grounded Segment Anything](https://github.com/IDEA-Research/Grounded-Segment-Anything). 
