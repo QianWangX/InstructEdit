@@ -1,4 +1,4 @@
-# InstructEdit Implementation
+# Implementation of InstructEdit 
 
 This is the implementation of **InstructEdit: Improving Automatic Masks for Diffusion-based Image Editing With User Instructions**.<br> 
 This code base is modified based on the repo [Grounded Segment Anything](https://github.com/IDEA-Research/Grounded-Segment-Anything). 
@@ -44,7 +44,7 @@ pip install opencv-python pycocotools matplotlib onnxruntime onnx ipykernel
 
 More details can be found in [install segment anything](https://github.com/facebookresearch/segment-anything#installation) and [install GroundingDINO](https://github.com/IDEA-Research/GroundingDINO#install) and [install OSX](https://github.com/IDEA-Research/OSX)
 
-After setting up the environment, please also specify the openai key in `chatgpt.py`.
+After setting up the environment, please also specify the <b>openai key</b> in `chatgpt.py`.
 
 ### Playground
 We provide a notebook (`grounded_sam_instructedit_demo.ipynb`), a python script (`grounded_sam_instructedit_demo.py`) and a gradio app (`gradio_intructedit.py`) for you to play around with.
