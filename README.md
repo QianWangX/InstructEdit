@@ -59,6 +59,7 @@ After setting up the environment, please also specify the <b>openai key</b> in `
 We provide a notebook (`grounded_sam_instructedit_demo.ipynb`), a python script (`grounded_sam_instructedit_demo.py`) and a gradio app (`gradio_intructedit.py`) for you to play around with.
 
 ## Citation
+```
 @misc{wang2023instructedit,
       title={InstructEdit: Improving Automatic Masks for Diffusion-based Image Editing With User Instructions}, 
       author={Qian Wang and Biao Zhang and Michael Birsak and Peter Wonka},
@@ -67,3 +68,4 @@ We provide a notebook (`grounded_sam_instructedit_demo.ipynb`), a python script 
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
+```
