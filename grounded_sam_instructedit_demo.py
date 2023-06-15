@@ -136,7 +136,7 @@ if __name__ == "__main__":
     )
     parser.add_argument("--input_image", type=str, required=True, help="path to image file")
     parser.add_argument("--user_instructions", type=str, required=True, help="user instructions")
-    parser.add_argument("--is_blip2_description", action='store_true', default=False, help="to use blip2 to help the prompting or not")
+    parser.add_argument("--is_blip2_description", action='store_false', default=True, help="to use blip2 to help the prompting or not")
     parser.add_argument("--is_show_mask", action='store_true', default=False, help="to save the dino mask as output or not")
     parser.add_argument(
         "--output_dir", "-o", type=str, default="outputs", required=True, help="output directory"
@@ -147,7 +147,7 @@ if __name__ == "__main__":
     parser.add_argument("--cache_dir", type=str, default=None, help="save your huggingface large model cache")
     parser.add_argument("--box_threshold", type=float, default=0.3, help="box threshold")
     parser.add_argument("--text_threshold", type=float, default=0.25, help="text threshold")
-    parser.add_argument("--encoding_ratio", type=float, default=0.8, help="encoding ratio for the image editing model")
+    parser.add_argument("--encoding_ratio", type=float, default=0.5, help="encoding ratio for the image editing model")
     parser.add_argument("--inpaint_mode", type=str, default="first", help="inpaint mode")
     parser.add_argument("--device", type=str, default="cpu", help="running on cpu only!, default=False")
     args = parser.parse_args()
