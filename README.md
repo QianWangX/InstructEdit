@@ -38,13 +38,6 @@ Install diffusers:
 pip install --upgrade diffusers[torch]
 ```
 
-Install Tag2Text:
-
-```bash
-git submodule update --init --recursive
-cd Tag2Text && pip install -r requirements.txt
-```
-
 The following optional dependencies are necessary for mask post-processing, saving masks in COCO format, the example notebooks, and exporting the model in ONNX format. `jupyter` is also required to run the example notebooks.
 
 ```
