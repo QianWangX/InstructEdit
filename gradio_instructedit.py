@@ -129,7 +129,7 @@ def maskedit(image_path, user_instructions, is_blip2_description, encoding_ratio
 
     # cfg
     config_file = 'GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py'  # change the path of the model config file
-    grounded_checkpoint = 'groundingdino_swint_ogc.pth'  # change the path of the model
+    grounded_checkpoint = 'GroundingDINO/weights/groundingdino_swint_ogc.pth'  # change the path of the model
     sam_checkpoint = 'sam_vit_h_4b8939.pth'
     # image_path = args.input_image
     # user_instructions = args.user_instructions
